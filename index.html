@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataengineer101.com - Old School Data Engineering Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="oldschool-container">
+
+        <header class="header-bar">
+            DATAENGINEER101.COM
+        </header>
+
+        <nav class="tabs-container">
+            <button class="tab-button active-tab" onclick="openTab(event, 'Databases')">DATABASES 💾</button>
+            <button class="tab-button" onclick="openTab(event, 'Orchestration')">ORCHESTRATION ⚙️</button>
+            <button class="tab-button" onclick="openTab(event, 'Modeling')">MODELING 📐</button>
+            <button class="tab-button" onclick="openTab(event, 'Layers')">DATA LAYERS ✨</button>
+        </nav>
+
+        <div class="content-area">
+
+            <div id="Databases" class="tab-content active-content">
+                <h2 class="section-title">Essential Database Concepts (9 Cards)</h2>
+                <div class="flashcard-grid">
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">SQL</div>
+                        <div class="card-back">Structured Query Language. Used for managing data in RDBMS. Foundation of data interaction.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">NoSQL</div>
+                        <div class="card-back">Non-relational databases (e.g., MongoDB, Cassandra). Scalable and flexible for unstructured data.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">ACID</div>
+                        <div class="card-back">Atomicity, Consistency, Isolation, Durability. Ensures reliable database transactions.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Indexing</div>
+                        <div class="card-back">A data structure that improves the speed of data retrieval operations on a database table.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Normalization</div>
+                        <div class="card-back">Organizing columns and tables to minimize data redundancy and dependency (1NF, 2NF, 3NF).</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Partitioning</div>
+                        <div class="card-back">Dividing a large table into smaller, more manageable pieces (partitions) for performance.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Foreign Key</div>
+                        <div class="card-back">A field that links two tables, enforcing referential integrity.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Stored Procedure</div>
+                        <div class="card-back">A prepared SQL code block that you can save and reuse, often to perform complex operations.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">CDC</div>
+                        <div class="card-back">Change Data Capture. Identifying and tracking changes in database records in real-time.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Orchestration" class="tab-content">
+                <h2 class="section-title">Workflow Management (9 Cards)</h2>
+                <div class="flashcard-grid">
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Apache Airflow</div>
+                        <div class="card-back">Platform to programmatically author, schedule, and monitor workflows (DAGs).</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">DAG</div>
+                        <div class="card-back">Directed Acyclic Graph. The core structure of an Airflow workflow, defining task dependencies.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Task Instance</div>
+                        <div class="card-back">A specific run of a task on a specific date in Airflow.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Operator</div>
+                        <div class="card-back">A template for a specific kind of task (e.g., PythonOperator, PostgresOperator) in Airflow.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Sensor</div>
+                        <div class="card-back">A special type of Airflow operator that waits for a condition to be met (e.g., file existence).</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Scheduler</div>
+                        <div class="card-back">The Airflow component that monitors DAGs and triggers tasks based on their schedule.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Kubeflow</div>
+                        <div class="card-back">The MLOps platform for deploying machine learning pipelines on Kubernetes.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Prefect</div>
+                        <div class="card-back">A modern, open-source workflow orchestration tool emphasizing dynamic, reactive workflows.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Idempotency</div>
+                        <div class="card-back">A principle where an operation can be performed multiple times without changing the result beyond the initial application.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Modeling" class="tab-content">
+                <h2 class="section-title">Data Transformation & Design (9 Cards)</h2>
+                <div class="flashcard-grid">
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">dbt (data build tool)</div>
+                        <div class="card-back">Transformation tool. Turns data into models by writing select statements and defining dependencies.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Star Schema</div>
+                        <div class="card-back">Data warehouse design with a central **Fact** table and radiating **Dimension** tables.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Fact Table</div>
+                        <div class="card-back">Stores quantitative data (metrics) and foreign keys to dimension tables.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Dimension Table</div>
+                        <div class="card-back">Stores descriptive attributes (context) about the business process being analyzed.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Snowflake Schema</div>
+                        <div class="card-back">An extension of Star Schema where dimension tables are further normalized into sub-dimensions.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">SCD Type 2</div>
+                        <div class="card-back">Slowly Changing Dimension Type 2. Tracks changes in dimension attributes by creating new rows with new effective dates.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">ELT</div>
+                        <div class="card-back">Extract, Load, Transform. Loading raw data first, then transforming it within the data warehouse.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Data Vault</div>
+                        <div class="card-back">A modeling technique designed for agility and historical tracking, composed of Hubs, Links, and Satellites.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Surrogate Key</div>
+                        <div class="card-back">A system-generated primary key used in data warehouse dimension tables, independent of the source system's key.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Layers" class="tab-content">
+                <h2 class="section-title">Data Lake Architecture (9 Cards)</h2>
+                <div class="flashcard-grid">
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Bronze Data</div>
+                        <div class="card-back">Raw, source-aligned data. Minimal cleaning, retains history.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Silver Data</div>
+                        <div class="card-back">Cleaned, filtered, and transformed data. Entity-aligned, ready for light analysis.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Gold Data</div>
+                        <div class="card-back">Highly curated, aggregated, and modeled data (e.g., Star Schema). Optimized for reporting.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Data Lake</div>
+                        <div class="card-back">A centralized repository to store large amounts of structured, semi-structured, and unstructured data.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Data Warehouse</div>
+                        <div class="card-back">A central repository of integrated data from one or more disparate sources, optimized for reporting and analysis.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Delta Lake</div>
+                        <div class="card-back">An open-source storage layer that brings ACID transactions and reliability to data lakes (Parquet files).</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Schema-on-Read</div>
+                        <div class="card-back">Applying a structure (schema) to data only when it is read from the source (typical in Data Lakes).</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Data Mesh</div>
+                        <div class="card-back">A decentralized, domain-oriented data architecture paradigm that treats data as a product.</div>
+                    </div>
+                    <div class="flashcard" onclick="flipCard(this)">
+                        <div class="card-front">Parquet / ORC</div>
+                        <div class="card-back">Columnar file formats optimized for analytical queries, storage efficiency, and performance in distributed systems.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <footer class="oldschool-footer">
+            ..made for fun and for the love of all things vintage.. Alexander Stefanov 2025
+        </footer>
+
+    </div> <script src="script.js"></script>
+</body>
+</html>
