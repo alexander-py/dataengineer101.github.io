@@ -32,9 +32,6 @@ Remove any sections that don't apply to your change.
 ### Additional Checks (if applicable)
 - [ ] Breaking changes are properly documented
 
-## Screenshots (if applicable)
-<!-- Add screenshots or videos for UI changes -->
-
 ## Related Issues
 <!-- List any related issues or PRs -->
 - Closes #
