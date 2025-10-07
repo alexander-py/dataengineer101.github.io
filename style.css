@@ -13,16 +13,21 @@ body {
 
 /* Main Outer Container - The Desktop Window Look */
 .oldschool-container {
+    /* ... existing styles ... */
     width: 90%;
     max-width: 1000px;
-    border: 3px solid #808080; /* Darker Grey Border */
+    border: 3px solid #808080;
     box-shadow:
-        5px 5px 0 0 #A9A9A9,   /* Inner Highlight for Depth */
-        -5px -5px 0 0 #FFFFFF, /* Outer Shadow for Lift */
-        inset -1px -1px 0 0 #404040; /* Dark inner shadow */
-    background-color: #C0C0C0; /* Standard Old-School Grey */
+        5px 5px 0 0 #A9A9A9,
+        -5px -5px 0 0 #FFFFFF,
+        inset -1px -1px 0 0 #404040;
+    background-color: #C0C0C0;
     padding: 0;
     margin-bottom: 50px;
+
+    /* ADD THIS: Set this container to flex to arrange its children (tabs & content) */
+    display: flex;
+    flex-direction: column; /* Keep header on top */
 }
 
 /* Header Bar - Title and Blue Accent */
@@ -39,11 +44,14 @@ body {
 /* Tab Navigation Styling */
 .tabs-container {
     display: flex;
-    /* ADDING THIS LINE to allow buttons to stack on small screens (broke on iphone) */
-    flex-wrap: wrap;
+    flex-direction: column; /* KEEP: Stacks buttons vertically */
+    flex-wrap: nowrap;
     background-color: #C0C0C0;
     border-bottom: 2px solid #808080;
     padding-left: 5px;
+    padding-right: 5px;
+    /* CHANGE: Remove width: fit-content; to allow it to fill 100% of the parent */
+    width: 100%; /* Make it fill the container width */
 }
 
 .tab-button {
@@ -51,14 +59,18 @@ body {
     background-color: #D3D3D3;
     color: #000000;
     border: 2px solid #C0C0C0;
-    border-bottom: none;
+    border-bottom: 2px solid #808080; /* Add bottom border for vertical separation */
+    border-right: 2px solid #808080; /* Add right border */
     padding: 8px 15px;
-    margin-right: 2px;
+    margin-right: 0; /* Remove horizontal margin */
+    margin-bottom: 2px; /* Add a small vertical margin */
     cursor: pointer;
     font-family: inherit;
     font-size: 0.9em;
     font-weight: bold;
-    /* 3D Button Effect */
+    text-align: left; /* Align text to the left for better look in a column */
+    width: 100%;
+    /* 3D Button Effect (adjusting for vertical stacking) */
     box-shadow:
         -1px -1px 0 0 #FFFFFF, /* Top/Left Highlight */
         1px 1px 0 0 #808080;   /* Bottom/Right Shadow */
@@ -69,12 +81,15 @@ body {
     background-color: #EFEFEF;
     border-top: 2px solid #FFFFFF;
     border-left: 2px solid #FFFFFF;
-    border-right: 2px solid #808080;
-    border-bottom: 2px solid #EFEFEF; /* Matches content background */
+    border-right: 2px solid #EFEFEF; /* Matches content background */
+    border-bottom: 2px solid #808080;
     box-shadow: none; /* Remove 3D effect to look connected */
     position: relative;
-    top: 2px; /* Visual shift down */
+    /* CHANGE: Reset top/right shifts, as it's a full-width block now */
+    top: 0;
+    right: 0;
 }
+
 
 /* Content Area - The main body box */
 .content-area {
