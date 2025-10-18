@@ -1,0 +1,24 @@
+name: PR Lint
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  pr-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: morrisoncole/pr-lint-action@v1.7.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          # Conventional Commit pattern: e.g. "feat: add X", "fix(scope): message"
+          title-regex: "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\\([a-z0-9-_.]+\\))?: .+$"
+          on-failed-regex-fail-action: true
+          on-failed-regex-create-review: false
+          on-failed-regex-request-changes: false
+          on-failed-regex-comment: "❌ PR title must follow Conventional Commits, e.g. `feat: add feature` or `fix(core): resolve bug`."
+          on-succeeded-regex-dismiss-review-comment: "✅ Looks good — PR title follows Conventional Commits!"
