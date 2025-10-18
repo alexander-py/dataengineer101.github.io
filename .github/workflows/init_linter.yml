@@ -21,4 +21,4 @@ jobs:
           on-failed-regex-create-review: false
           on-failed-regex-request-changes: false
           on-failed-regex-comment: "❌ PR title must follow Conventional Commits, e.g. `feat: add feature` or `fix(core): resolve bug`."
-          on-succeeded-regex-dismiss-review-comment: "✅ Looks good — PR title follows Conventional Commits!"
+          on-succeeded-regex-dismiss-review-comment: "✅ Looks good — PR title follows Conventional Commits."
